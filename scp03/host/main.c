@@ -21,7 +21,7 @@ struct scp03_ctx {
 
 void prepare_tee_session(struct scp03_ctx *ctx)
 {
-	TEEC_UUID uuid = TA_SCP03_UUID;
+	TEEC_UUID uuid = PTA_SCP03_UUID;
 	uint32_t origin;
 	TEEC_Result res;
 
@@ -56,7 +56,7 @@ static int scp03_enable(unsigned int rotate_keys)
 					 TEEC_NONE, TEEC_NONE);
 	op.params[0].value.a = rotate_keys;
 
-	res = TEEC_InvokeCommand(&ctx.sess, TA_CRYPT_CMD_ENABLE_SCP03,
+	res = TEEC_InvokeCommand(&ctx.sess, PTA_CMD_ENABLE_SCP03,
 				 &op, &origin);
 
 	terminate_tee_session(&ctx);
