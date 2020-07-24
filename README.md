@@ -11,3 +11,8 @@ when building OP-TEE:
  * CFG_CORE_SE05X_SCP03_PROVISION=1
 
 For the TA branch, check the README to load it early if RPMB FS is required.
+
+After installing the binary, do use symbolic links to access to its functionality
+* ln -s scp03 scp03_enable
+* ln -s scp03 scp03_rotate
+
